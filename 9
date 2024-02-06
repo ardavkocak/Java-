@@ -1,0 +1,183 @@
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Animal> animals = new ArrayList<>();
+
+        Animal animal1 = new Animal(5, "Female");
+        animals.add(animal1);
+
+        Animal animal2 = new Animal(3, "Male");
+        animals.add(animal2);
+
+        Duck duck1 = new Duck(2, "Male", "Yellow");
+        animals.add(duck1);
+
+        Duck duck2 = new Duck(1, "Female", "Green");
+        animals.add(duck2);
+
+        Duck duck3 = new Duck(3, "Male", "White");
+        animals.add(duck3);
+
+
+        Fish fish1 = new Fish(1, "Female", 2, true);
+        animals.add(fish1);
+
+        Fish fish2 = new Fish(4, "Male", 1, false);
+        animals.add(fish2);
+
+        Zebra zebra1 = new Zebra(6, "Female", true);
+        animals.add(zebra1);
+
+        Zebra zebra2 = new Zebra(8, "Male", false);
+        animals.add(zebra2);
+
+        Zebra zebra3 = new Zebra(5, "Female", true);
+        animals.add(zebra3);
+
+        Zebra zebra4 = new Zebra(7, "Male", false);
+        animals.add(zebra4);
+
+        for (Animal animal : animals) {
+            System.out.println(animal.toString());
+            animal.voice();
+            animal.sleep();
+
+            if (animal instanceof Duck) {
+                ((Duck) animal).swim();
+                ((Duck) animal).quack();
+            }
+
+            if (animal instanceof Fish) {
+                ((Fish) animal).swim();
+            }
+
+            if (animal instanceof Zebra) {
+                ((Zebra) animal).run();
+            }
+
+            System.out.println("---------------");
+        }
+    }
+}
+public class Animal {
+    private int age;
+    private String gender;
+
+    public Animal(int age, String gender) {
+        this.age = age;
+        this.gender = gender;
+    }
+
+    public boolean isMammal(){
+        return true;
+    }
+
+    public void mate(){
+
+    }
+
+    public void voice(){
+        System.out.println("Ses cikartiyor");
+    }
+
+    public final void sleep(){
+        System.out.println("Uyuyor");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal";
+    }
+}
+public class Fish extends Animal{
+
+    private int sizeInFt;
+
+    private boolean canEat;
+
+    public Fish(int age, String gender, int sizeInFt, boolean canEat) {
+        super(age, gender);
+        this.sizeInFt = sizeInFt;
+        this.canEat = canEat;
+    }
+
+    public void swim(){
+        System.out.println("Yüzüyor");
+    }
+
+    @Override
+    public void voice() {
+        System.out.println("Ses cikariyor");
+    }
+
+    @Override
+    public String toString() {
+        return "Fish " + isMammal();
+    }
+
+    @Override
+    public boolean isMammal() {
+        return false;
+    }
+}
+public class Duck extends Animal{
+
+    private String beakColor;
+
+    public Duck(int age, String gender, String beakColor) {
+        super(age, gender);
+        this.beakColor = beakColor;
+    }
+
+    public void swim(){
+        System.out.println("Yuzuyor");
+    }
+
+    public void quack(){
+        System.out.println("Ordek 'quack' lıyor...");
+    }
+
+    @Override
+    public void voice() {
+        System.out.println("Ses cikariyor");
+    }
+
+    @Override
+    public String toString() {
+        return "Duck " + isMammal();
+    }
+
+    @Override
+    public boolean isMammal() {
+        return false;
+    }
+}
+public class Zebra extends Animal{
+
+    private boolean is_wild;
+
+    public Zebra(int age, String gender, boolean is_wild) {
+        super(age, gender);
+        this.is_wild = is_wild;
+    }
+
+    public void run(){
+        System.out.println("Kosuyor");
+    }
+
+    @Override
+    public void voice() {
+        System.out.println("Ses cikariyor");
+    }
+
+    @Override
+    public String toString() {
+        return "Zebra " + isMammal();
+    }
+
+    @Override
+    public boolean isMammal() {
+        return true;
+    }
+}
