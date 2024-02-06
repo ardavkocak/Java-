@@ -1,0 +1,50 @@
+package javaapplication2;
+
+import java.util.Scanner;
+
+
+public class nyplab4 {
+
+    public static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        System.out.print("Yazinizi giriniz: ");
+
+        String yazi1 = scanner.nextLine();
+        int bosluksayisi1 = 0;
+        int kucuksayisi = 0;
+
+        for (int i = 0; i < yazi1.length(); i++) {
+
+            if (yazi1.charAt(i) == ' ') {
+                bosluksayisi1++;
+            }
+
+            if (Character.isLowerCase(yazi1.charAt(i))) {
+                kucuksayisi++;
+            }
+
+        }
+
+
+        System.out.println("Bosluk sayisi: "+bosluksayisi1);
+        System.out.println("Kucuk harf sayisi: "+kucuksayisi);
+
+
+        String full="Dersi Java 2012 Programlama Fall ";
+        String dersi=full.substring(0,5);
+        String java=full.substring(6,10);
+        String ikibinoniki=full.substring(11,15);
+        String programlama=full.substring(16,27);
+        String fall=full.substring(28,32);
+        String last=java+' '+programlama+' '+dersi+' '+fall+' '+ikibinoniki;
+        System.out.println(""+last);
+
+
+
+    }
+
+
+
+}
