@@ -1,0 +1,13 @@
+JAVA NOTLAR 
+Otomatik donusturme
+double: 64 bit = 8 byte
+float: 32 bit= 4 byte
+int ---> float ---> double
+byte ---> short ---> int ---> long
+
+Karakter kodu
+https://symbl.cc/en/unicode/blocks/
+
+
+\t tab kadar bosluk
+\n alt satir
