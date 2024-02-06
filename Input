@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Lutfen 1.sayiyi giriniz:");
+
+        double yas1=scanner.nextDouble();
+
+        System.out.println("Lutfen 2.sayiyi giriniz:");
+
+        double yas2=scanner.nextDouble();
+
+
+
+        System.out.println("Toplam: "+ (yas1+yas2));
+
+    }
+}
