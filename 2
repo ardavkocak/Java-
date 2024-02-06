@@ -1,0 +1,30 @@
+import java.security.spec.RSAOtherPrimeInfo;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args)
+        {
+            double pi = Math.PI;
+            Scanner scanner=new Scanner(System.in);
+            System.out.println("yaricap degerini giriniz");
+
+            double r= scanner.nextDouble();
+
+            double alan=Math.PI*r*r;
+            double cevre=2*Math.PI*r;
+            System.out.println("dairenin alini= " +alan);
+            System.out.println("dairenin cevresi= " +cevre);
+
+            double x1=1.2;
+            float y1=14;
+            double result1 = Math.pow((3*x1)+(7/y1),2);
+            System.out.println("1.deger" +result1);
+            int x2=6;
+            int y2=4;
+            double result2 = ((Math.pow(x2,2)+2*y2)*2)/Math.pow(y2,2);
+            System.out.println("2.deger " +result2);
+
+
+
+    }
+}
