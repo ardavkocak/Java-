@@ -1,0 +1,72 @@
+import java.util.Scanner;
+import java.util.Arrays;
+import java.util.ArrayList;
+
+public class nyplab5 {
+    public static void main(String[] args) {
+        /*
+        Scanner scanner = new Scanner(System.in);
+
+        int[] array1 = new int[5];
+        int[] array2 = new int[5];
+
+        System.out.println("Birinci dizinin elemanlarını girin:");
+        for (int i = 0; i < 5; i++) {
+            array1[i] = scanner.nextInt();
+        }
+
+        System.out.println("Ikinci dizinin elemanlarını girin:");
+        for (int i = 0; i < 5; i++) {
+            array2[i] = scanner.nextInt();
+        }
+
+        boolean esitMi = Arrays.equals(array1, array2);
+
+        if (esitMi) {
+            System.out.println("Diziler eşittir.");
+        } else {
+            System.out.println("Diziler eşit değildir.");
+        }
+
+
+
+        Scanner scanner = new Scanner(System.in);
+
+        // İlk boyutun uzunluğunu belirle
+        int satirSayisi = 4;
+        int[][] matris = new int[satirSayisi][];
+
+        // Her bir satırın uzunluğunu kullanıcıdan al
+        for (int i = 0; i < satirSayisi; i++) {
+            System.out.print(i + ". satırın uzunluğunu girin: ");
+            int sutunSayisi = scanner.nextInt();
+            matris[i] = new int[sutunSayisi];
+        }
+
+        // Kullanıcıdan değerleri al
+        for (int i = 0; i < satirSayisi; i++) {
+            for (int j = 0; j < matris[i].length; j++) {
+                System.out.print("matris[" + i + "][" + j + "]: ");
+                matris[i][j] = scanner.nextInt();
+            }
+        }
+
+        // Matrisi ekrana yazdır
+        System.out.println("Girilen Matris:");
+        for (int i = 0; i < satirSayisi; i++) {
+            for (int j = 0; j < matris[i].length; j++) {
+                System.out.print(matris[i][j] + " ");
+            }
+            System.out.println();
+        }
+        */
+        String[] kelimeDizisi = {"bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on"};
+
+        ArrayList<String> kelimelerListesi = new ArrayList<>(Arrays.asList(kelimeDizisi));
+
+        System.out.println("ArrayList<String> kelimelerListesi: " + kelimelerListesi);
+    }
+}
+
+
+
