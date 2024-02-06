@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class nyplab6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("Menü:");
+            System.out.println("1. Karakter sayısını say");
+            System.out.println("2. İki kelime arasındaki ortak karakterleri bul");
+            System.out.println("3. Cümleyi ArrayList'e dönüştür");
+            System.out.println("4. Çıkış");
+
+
+            System.out.print("Seçiminizi yapın (1-4): ");
+            int secim = scanner.nextInt();
+
+
+            switch (secim) {
+                case 1:
+                    karakterSayisi();
+                    break;
+                case 2:
+                    ortakkarakter();
+                    break;
+                case 3:
+                    ArrayList();
+                    break;
+                case 4:
+                    System.out.println("Programdan çıkılıyor.");
+                    System.exit(0);
+                default:
+                    System.out.println("Geçersiz seçim. Lütfen tekrar deneyin.");
+            }
+        }
+    }
+
+    private static void karakterSayisi() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Bir metin girin: ");
+        String metin = scanner.nextLine();
+        System.out.println("Karakter sayısı: " + metin.length());
+    }
+
+    private static void ortakkarakter() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("İlk kelimeyi girin: ");
+        String kelime1 = scanner.nextLine();
+        System.out.print("İkinci kelimeyi girin: ");
+        String kelime2 = scanner.nextLine();
+
+        // Ortak karakterleri bul
+        ArrayList<Character> ortakKarakterler = new ArrayList<>();
+        for (char c : kelime1.toCharArray()) {
+            if (kelime2.indexOf(c) != -1 && !ortakKarakterler.contains(c)) {
+                ortakKarakterler.add(c);
+            }
+        }
+
+        System.out.println("Ortak karakterler: " + ortakKarakterler);
+    }
+
+    private static void ArrayList() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Bir cümle girin: ");
+        String cumle = scanner.nextLine();
+
+        // Cümleyi ArrayList'e dönüştür
+        ArrayList<String> kelimeListesi = new ArrayList<>();
+        for (String kelime : cumle.split("\\s+")) {   //s+ bosluk space gordugunde
+            kelimeListesi.add(kelime);
+        }
+
+        System.out.println("ArrayList: " + kelimeListesi);
+    }
+}
